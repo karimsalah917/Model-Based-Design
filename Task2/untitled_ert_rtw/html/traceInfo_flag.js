@@ -1,0 +1,53 @@
+function TraceInfoFlag() {
+    this.traceFlag = new Array();
+    this.traceFlag["untitled.c:41c24"]=1;
+    this.traceFlag["untitled.c:67c25"]=1;
+    this.traceFlag["untitled.c:67c32"]=1;
+    this.traceFlag["untitled.c:67c53"]=1;
+    this.traceFlag["untitled.c:93c26"]=1;
+    this.traceFlag["untitled.c:93c33"]=1;
+    this.traceFlag["untitled.c:93c55"]=1;
+    this.traceFlag["untitled.c:119c25"]=1;
+    this.traceFlag["untitled.c:119c31"]=1;
+    this.traceFlag["untitled.c:119c52"]=1;
+    this.traceFlag["untitled.c:143c22"]=1;
+}
+top.TraceInfoFlag.instance = new TraceInfoFlag();
+function TraceInfoLineFlag() {
+    this.lineTraceFlag = new Array();
+    this.lineTraceFlag["untitled.c:41"]=1;
+    this.lineTraceFlag["untitled.c:45"]=1;
+    this.lineTraceFlag["untitled.c:49"]=1;
+    this.lineTraceFlag["untitled.c:54"]=1;
+    this.lineTraceFlag["untitled.c:67"]=1;
+    this.lineTraceFlag["untitled.c:71"]=1;
+    this.lineTraceFlag["untitled.c:75"]=1;
+    this.lineTraceFlag["untitled.c:80"]=1;
+    this.lineTraceFlag["untitled.c:93"]=1;
+    this.lineTraceFlag["untitled.c:97"]=1;
+    this.lineTraceFlag["untitled.c:101"]=1;
+    this.lineTraceFlag["untitled.c:106"]=1;
+    this.lineTraceFlag["untitled.c:119"]=1;
+    this.lineTraceFlag["untitled.c:123"]=1;
+    this.lineTraceFlag["untitled.c:127"]=1;
+    this.lineTraceFlag["untitled.c:132"]=1;
+    this.lineTraceFlag["untitled.c:143"]=1;
+    this.lineTraceFlag["untitled.c:147"]=1;
+    this.lineTraceFlag["untitled.c:151"]=1;
+    this.lineTraceFlag["untitled.c:157"]=1;
+    this.lineTraceFlag["untitled.c:158"]=1;
+    this.lineTraceFlag["untitled.c:174"]=1;
+    this.lineTraceFlag["untitled.h:38"]=1;
+    this.lineTraceFlag["untitled.h:39"]=1;
+    this.lineTraceFlag["untitled.h:40"]=1;
+    this.lineTraceFlag["untitled.h:41"]=1;
+    this.lineTraceFlag["untitled.h:42"]=1;
+    this.lineTraceFlag["untitled.h:50"]=1;
+    this.lineTraceFlag["untitled.h:55"]=1;
+    this.lineTraceFlag["untitled.h:60"]=1;
+    this.lineTraceFlag["untitled.h:65"]=1;
+    this.lineTraceFlag["untitled.h:70"]=1;
+    this.lineTraceFlag["untitled.h:75"]=1;
+    this.lineTraceFlag["untitled.h:80"]=1;
+}
+top.TraceInfoLineFlag.instance = new TraceInfoLineFlag();
