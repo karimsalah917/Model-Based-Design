@@ -2,7 +2,7 @@
 ## Makefile generated for component 'task2'. 
 ## 
 ## Makefile     : task2.mk
-## Generated on : Sat Jan 27 08:28:36 2024
+## Generated on : Fri Feb 09 13:39:23 2024
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/task2.exe
 ## Product type : executable
 ## 
@@ -22,7 +22,7 @@ MAKEFILE                  = task2.mk
 MATLAB_ROOT               = C:/PROGRA~1/POLYSP~1/R2021a
 MATLAB_BIN                = C:/PROGRA~1/POLYSP~1/R2021a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = E:/Embedded/workspace/MBD/Model-Based-Design/Topic2
+START_DIR                 = E:/Embedded/workspace/MBD/Model-Based-Design/Task2
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

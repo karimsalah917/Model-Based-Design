@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'task2'.
  *
- * Model version                  : 1.3
+ * Model version                  : 1.4
  * Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
- * C/C++ source code generated on : Sat Jan 27 08:28:04 2024
+ * C/C++ source code generated on : Fri Feb  9 13:39:01 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -25,6 +25,31 @@ ExtY_task2_T task2_Y;
 /* Real-time model */
 static RT_MODEL_task2_T task2_M_;
 RT_MODEL_task2_T *const task2_M = &task2_M_;
+
+/*
+ * Output and update for action system:
+ *    '<S1>/If Action Subsystem1'
+ *    '<S2>/If Action Subsystem1'
+ */
+void task2_IfActionSubsystem1(char_T rty_Out1[256])
+{
+  /* StringConstant: '<S4>/String Constant' */
+  strncpy(&rty_Out1[0], &task2_ConstP.pooled1[0], 255U);
+  rty_Out1[255] = '\x00';
+}
+
+/*
+ * Output and update for action system:
+ *    '<S1>/If Action Subsystem'
+ *    '<S2>/If Action Subsystem'
+ */
+void task2_IfActionSubsystem(char_T rty_Out1[256])
+{
+  /* StringConstant: '<S3>/String Constant' */
+  strncpy(&rty_Out1[0], &task2_ConstP.pooled2[0], 255U);
+  rty_Out1[255] = '\x00';
+}
+
 real_T rt_remd_snf(real_T u0, real_T u1)
 {
   real_T u1_0;
@@ -58,33 +83,62 @@ real_T rt_remd_snf(real_T u0, real_T u1)
 /* Model step function */
 void task2_step(void)
 {
+  char_T rtb_Merge[256];
+
   /* If: '<S1>/If' incorporates:
    *  Constant: '<S1>/Constant'
    *  Inport: '<Root>/In1'
    *  Math: '<S1>/Math Function'
-   *  Outport: '<Root>/Out1'
-   *  StringConstant: '<S2>/String Constant'
-   *  StringConstant: '<S3>/String Constant'
    */
   if (rt_remd_snf(task2_U.In1, 2.0) == 0.0) {
     /* Outputs for IfAction SubSystem: '<S1>/If Action Subsystem1' incorporates:
-     *  ActionPort: '<S3>/Action Port'
+     *  ActionPort: '<S4>/Action Port'
      */
-    strncpy(&task2_Y.Out1[0], &task2_ConstP.StringConstant_String[0], 255U);
+    task2_IfActionSubsystem1(&rtb_Merge[0]);
 
     /* End of Outputs for SubSystem: '<S1>/If Action Subsystem1' */
-    task2_Y.Out1[255] = '\x00';
   } else {
     /* Outputs for IfAction SubSystem: '<S1>/If Action Subsystem' incorporates:
-     *  ActionPort: '<S2>/Action Port'
+     *  ActionPort: '<S3>/Action Port'
      */
-    strncpy(&task2_Y.Out1[0], &task2_ConstP.StringConstant_String_k[0], 255U);
+    task2_IfActionSubsystem(&rtb_Merge[0]);
 
     /* End of Outputs for SubSystem: '<S1>/If Action Subsystem' */
-    task2_Y.Out1[255] = '\x00';
   }
 
   /* End of If: '<S1>/If' */
+
+  /* Outport: '<Root>/Out1' */
+  strncpy(&task2_Y.Out1[0], &rtb_Merge[0], 255U);
+  task2_Y.Out1[255] = '\x00';
+
+  /* If: '<S2>/If' incorporates:
+   *  Inport: '<Root>/In2'
+   */
+  /* MATLAB Function 'IsEven2/MATLAB Function': '<S7>:1' */
+  /* '<S7>:1:3' y = u%2; */
+  /* 2; */
+  if (task2_U.In2 == 0.0) {
+    /* Outputs for IfAction SubSystem: '<S2>/If Action Subsystem1' incorporates:
+     *  ActionPort: '<S6>/Action Port'
+     */
+    task2_IfActionSubsystem1(&rtb_Merge[0]);
+
+    /* End of Outputs for SubSystem: '<S2>/If Action Subsystem1' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S2>/If Action Subsystem' incorporates:
+     *  ActionPort: '<S5>/Action Port'
+     */
+    task2_IfActionSubsystem(&rtb_Merge[0]);
+
+    /* End of Outputs for SubSystem: '<S2>/If Action Subsystem' */
+  }
+
+  /* End of If: '<S2>/If' */
+
+  /* Outport: '<Root>/Out2' */
+  strncpy(&task2_Y.Out2[0], &rtb_Merge[0], 255U);
+  task2_Y.Out2[255] = '\x00';
 }
 
 /* Model initialize function */
@@ -99,11 +153,11 @@ void task2_initialize(void)
   rtmSetErrorStatus(task2_M, (NULL));
 
   /* external inputs */
-  task2_U.In1 = 0.0;
+  (void)memset(&task2_U, 0, sizeof(ExtU_task2_T));
 
   /* external outputs */
-  (void) memset(&task2_Y.Out1[0], 0,
-                256U*sizeof(char_T));
+  (void) memset((void *)&task2_Y, 0,
+                sizeof(ExtY_task2_T));
 }
 
 /* Model terminate function */

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'task2'.
  *
- * Model version                  : 1.3
+ * Model version                  : 1.4
  * Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
- * C/C++ source code generated on : Sat Jan 27 08:28:04 2024
+ * C/C++ source code generated on : Fri Feb  9 13:39:01 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)

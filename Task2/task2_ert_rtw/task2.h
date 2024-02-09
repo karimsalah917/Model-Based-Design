@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'task2'.
  *
- * Model version                  : 1.3
+ * Model version                  : 1.4
  * Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
- * C/C++ source code generated on : Sat Jan 27 08:28:04 2024
+ * C/C++ source code generated on : Fri Feb  9 13:39:01 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -39,25 +39,31 @@
 
 /* Constant parameters (default storage) */
 typedef struct {
-  /* Computed Parameter: StringConstant_String
-   * Referenced by: '<S3>/String Constant'
+  /* Pooled Parameter (Expression: "Even")
+   * Referenced by:
+   *   '<S4>/String Constant'
+   *   '<S6>/String Constant'
    */
-  char_T StringConstant_String[256];
+  char_T pooled1[256];
 
-  /* Computed Parameter: StringConstant_String_k
-   * Referenced by: '<S2>/String Constant'
+  /* Pooled Parameter (Expression: "odd")
+   * Referenced by:
+   *   '<S3>/String Constant'
+   *   '<S5>/String Constant'
    */
-  char_T StringConstant_String_k[256];
+  char_T pooled2[256];
 } ConstP_task2_T;
 
 /* External inputs (root inport signals with default storage) */
 typedef struct {
   real_T In1;                          /* '<Root>/In1' */
+  real_T In2;                          /* '<Root>/In2' */
 } ExtU_task2_T;
 
 /* External outputs (root outports fed by signals with default storage) */
 typedef struct {
   char_T Out1[256];                    /* '<Root>/Out1' */
+  char_T Out2[256];                    /* '<Root>/Out2' */
 } ExtY_task2_T;
 
 /* Real-time Model Data Structure */
@@ -98,8 +104,12 @@ extern RT_MODEL_task2_T *const task2_M;
  *
  * '<Root>' : 'task2'
  * '<S1>'   : 'task2/Is Even'
- * '<S2>'   : 'task2/Is Even/If Action Subsystem'
- * '<S3>'   : 'task2/Is Even/If Action Subsystem1'
+ * '<S2>'   : 'task2/IsEven2'
+ * '<S3>'   : 'task2/Is Even/If Action Subsystem'
+ * '<S4>'   : 'task2/Is Even/If Action Subsystem1'
+ * '<S5>'   : 'task2/IsEven2/If Action Subsystem'
+ * '<S6>'   : 'task2/IsEven2/If Action Subsystem1'
+ * '<S7>'   : 'task2/IsEven2/MATLAB Function'
  */
 #endif                                 /* RTW_HEADER_task2_h_ */
 
