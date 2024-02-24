@@ -1,0 +1,5 @@
+LIBRARY cLEMfx5AQxW6SrGczw69h_cclib.dll
+EXPORTS
+    get_dll_checksum_cLEMfx5AQxW6SrGczw69h
+    LED_SET_cLEMfx5AQxW6SrGczw69h
+    get_checksum_source_info

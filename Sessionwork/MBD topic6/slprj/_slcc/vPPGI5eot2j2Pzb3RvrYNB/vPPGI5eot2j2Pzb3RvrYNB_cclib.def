@@ -1,0 +1,5 @@
+LIBRARY vPPGI5eot2j2Pzb3RvrYNB_cclib.dll
+EXPORTS
+    get_dll_checksum_vPPGI5eot2j2Pzb3RvrYNB
+    LED_SET_vPPGI5eot2j2Pzb3RvrYNB
+    get_checksum_source_info

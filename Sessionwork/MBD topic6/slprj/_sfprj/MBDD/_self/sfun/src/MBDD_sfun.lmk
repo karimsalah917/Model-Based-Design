@@ -1,0 +1,35 @@
+CC     = "C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"MBDD_sfun.obj"\
+	"c3_MBDD.obj"\
+	"MBDD_sfun_registry.obj"\
+	"LED.obj"\
+	"half_type.obj"\
+	"lccstub.obj"\
+	"c_mexapi_version.obj"\
+
+INCLUDE_PATH= -I"C:\Program Files\Polyspace\R2021a\extern\include"  -I"C:\Program Files\Polyspace\R2021a\simulink\include"  -I"C:\Program Files\Polyspace\R2021a\simulink\include\sf_runtime"  -I"C:\Program Files\Polyspace\R2021a\stateflow\c\mex\include"  -I"C:\Program Files\Polyspace\R2021a\rtw\c\src"  -I"E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src"  -I"E:\Embedded\workspace\MBD\mbd topic6\slprj\_sfprj\MBDD\_self\sfun\src"  -I"E:\Embedded\workspace\MBD\mbd topic6"  -I"C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\include64" 
+ 
+
+MBDD_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o MBDD_sfun.mexw64 @MBDD_sfun.lmko
+MBDD_sfun.obj :	"E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\MBDD_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\MBDD_sfun.c"
+c3_MBDD.obj :	"E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\c3_MBDD.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\c3_MBDD.c"
+MBDD_sfun_registry.obj :	"E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\MBDD_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\MBDD_sfun_registry.c"
+LED.obj :	"E:\Embedded\workspace\MBD\mbd topic6\LED.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\Embedded\workspace\MBD\mbd topic6\LED.c"
+half_type.obj :	"E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\half_type.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\Embedded\workspace\MBD\MBD topic6\slprj\_sfprj\MBDD\_self\sfun\src\half_type.c"
+lccstub.obj :	"C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\Polyspace\R2021a\sys\lcc64\lcc64\mex\lccstub.c"
+c_mexapi_version.obj :	"C:\Program Files\Polyspace\R2021a\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\Polyspace\R2021a\extern\version\c_mexapi_version.c"
